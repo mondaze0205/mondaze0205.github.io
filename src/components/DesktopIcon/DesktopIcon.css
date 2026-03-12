@@ -1,0 +1,65 @@
+.desktop-icon {
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0; /* Margin removed for absolute positioning */
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+
+.icon-image {
+  width: 60px;
+  height: 60px;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  pointer-events: none; /* Let the parent handle events */
+}
+
+.icon-label {
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  padding: 2px 10px;
+  border-radius: 4px;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.desktop-icon:hover .icon-label {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.desktop-icon:active .icon-image {
+  filter: brightness(0.8) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.desktop-icon.ios-icon {
+  width: 100%;
+  height: auto;
+}
+
+.desktop-icon.ios-icon .icon-image {
+  width: 60px;
+  height: 60px;
+  font-size: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 14px; /* iOS Squircle look */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+}
+
+.desktop-icon.ios-icon .icon-label {
+  color: #333;
+  text-shadow: none;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 0;
+}

@@ -1,0 +1,81 @@
+/* Mac MenuBar Styles */
+.mac-menubar {
+  height: 24px;
+  background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0.8) 0%, 
+    rgba(200, 200, 200, 0.8) 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 13px;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+}
+
+.menu-left, .menu-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.menu-item {
+  padding: 0 4px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: default;
+  color: #222;
+}
+
+.menu-item:hover {
+  background-color: #3875D7;
+  color: #fff;
+}
+
+.apple-logo {
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* iOS Status Bar Styles */
+.ios-statusbar {
+  height: 44px; /* Typical iPhone Notch area height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color: #333;
+  font-weight: 600;
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.status-left {
+  display: flex;
+  align-items: center;
+}
+
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-icon {
+  font-size: 18px;
+}

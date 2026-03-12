@@ -1,0 +1,119 @@
+.profile-app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+}
+
+.profile-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  border-right: 2px solid #222222;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-photo-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #eee;
+  border: 2px solid #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.profile-name {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.profile-title {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.profile-contacts {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.notion-link-btn {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #222222;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 2px solid #222222;
+}
+
+.notion-link-btn:hover {
+  background-color: #fff;
+  color: #222222;
+}
+
+.profile-main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.profile-section {
+  margin-bottom: 25px;
+}
+
+.profile-section h3 {
+  border-bottom: 2px solid #222222;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  background-color: #eee;
+  border: 1px solid #222222;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.experience-item {
+  margin-bottom: 15px;
+}
+
+.experience-item h4 {
+  margin-bottom: 5px;
+}
+
+.exp-role {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.experience-item ul {
+  font-size: 0.85rem;
+  padding-left: 20px;
+  margin-top: 5px;
+}

@@ -1,0 +1,59 @@
+.diary-list h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #222222;
+  padding-bottom: 8px;
+}
+
+.file-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.file-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.file-item:hover {
+  background-color: #eee;
+}
+
+.file-icon {
+  font-size: 32px;
+  margin-bottom: 4px;
+}
+
+.file-name {
+  font-size: 11px;
+  text-align: center;
+  word-break: break-all;
+}
+
+.back-btn {
+  background: #fff;
+  border: 1px solid #222222;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.back-btn:hover {
+  background: #222222;
+  color: #fff;
+}
+
+.markdown-body {
+  line-height: 1.6;
+}
+
+.markdown-body h1 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3em;
+}

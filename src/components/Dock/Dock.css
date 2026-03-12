@@ -1,0 +1,92 @@
+.dock-container {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  perspective: 1000px;
+}
+
+.dock-shelf {
+  display: flex;
+  align-items: flex-end;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  gap: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.dock-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.dock-item-wrapper:hover {
+  transform: scale(1.3) translateY(-10px);
+}
+
+.dock-item {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.dock-icon {
+  font-size: 35px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.dock-indicator {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  margin-top: 6px;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+/* iPhone Dock Style */
+@media (max-width: 768px) {
+  .dock-container {
+    bottom: 20px;
+    width: 90%;
+    transform: translateX(-50%);
+  }
+  
+  .dock-shelf {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 10px 20px;
+    transform: none; /* No 3D on iPhone */
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .dock-item {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+  }
+
+  .dock-item-wrapper:hover {
+    transform: none; /* No hover scale on touch */
+  }
+
+  .dock-indicator {
+    display: none; /* iPhone doesn't usually show active dots on home dock */
+  }
+}

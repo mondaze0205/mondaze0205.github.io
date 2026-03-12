@@ -1,0 +1,130 @@
+.mac-window {
+  position: absolute;
+  background-color: #ECECEC;
+  border: 1px solid #A5A5A5;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+  border-radius: 6px;
+  transition: width 0.3s cubic-bezier(0.2, 0, 0.2, 1), 
+              height 0.3s cubic-bezier(0.2, 0, 0.2, 1), 
+              left 0.3s cubic-bezier(0.2, 0, 0.2, 1), 
+              top 0.3s cubic-bezier(0.2, 0, 0.2, 1),
+              border-radius 0.3s ease;
+}
+
+.mac-window.mobile-window {
+  width: 100% !important;
+  height: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  border-radius: 0;
+  border: none;
+  z-index: 5000;
+  animation: slide-up 0.3s ease-out;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.mac-window.mobile-window .title-bar {
+  height: 44px;
+  padding-top: 15px; /* Leave space for Status Bar icons */
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the title */
+  padding: 0 10px;
+  background: linear-gradient(to bottom, #E8E8E8 0%, #B8B8B8 100%);
+  height: 22px;
+  border-bottom: 1px solid #999;
+  position: relative;
+}
+
+.title-text {
+  font-weight: 500;
+  color: #333;
+  font-size: 13px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  z-index: 1;
+}
+
+.title-bar-controls {
+  position: absolute;
+  left: 8px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+/* Stoplight Buttons (Perfectly Circular Aqua Marble Style) */
+.close-btn, .min-btn, .max-btn {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0; /* Prevents stretching into ellipses */
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  position: relative;
+  box-shadow: 
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2),
+    0 1px 1px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassy Glint (Smaller and more centered highlight) */
+.close-btn::before, .min-btn::before, .max-btn::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 6px;
+  height: 3px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.2) 100%);
+  border-radius: 50% / 100% 100% 0 0;
+  z-index: 1;
+}
+
+.close-btn { 
+  background: radial-gradient(circle at center, #ff8c88 0%, #ff5f57 40%, #c0392b 100%); 
+}
+.min-btn { 
+  background: radial-gradient(circle at center, #ffdb72 0%, #ffbd2e 40%, #d39e00 100%); 
+}
+.max-btn { 
+  background: radial-gradient(circle at center, #57e06b 0%, #28c841 40%, #1a9e30 100%); 
+}
+
+/* Hover effects: darken slightly but keep the glass look */
+.close-btn:hover { background: radial-gradient(circle at center, #ff706b 0%, #e0443e 100%); }
+.min-btn:hover { background: radial-gradient(circle at center, #ffcf4d 0%, #dea123 100%); }
+.max-btn:hover { background: radial-gradient(circle at center, #36d64f 0%, #1eaf30 100%); }
+
+
+.window-content {
+  flex: 1;
+  padding: 0; /* Reset for app-specific padding */
+  overflow: auto;
+  background-color: #FFF;
+}
+
+.resizer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  cursor: nwse-resize;
+  background: transparent; /* Cleaner Leopard look often hid the resizer */
+}
