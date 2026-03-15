@@ -15,9 +15,9 @@ body {
 }
 
 .mac-desktop {
-  background-image: url('./assets/background.jpg');
+  background-image: url('./assets/background2.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;

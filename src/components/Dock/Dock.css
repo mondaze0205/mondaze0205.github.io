@@ -9,8 +9,8 @@
 
 .dock-shelf {
   display: flex;
-  align-items: flex-end;
-  padding: 8px 15px;
+  align-items: center;
+  padding: 10px 15px;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -26,6 +26,7 @@
   position: relative;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
+  padding-bottom: 4px; /* Space for the indicator */
 }
 
 .dock-item-wrapper:hover {
@@ -38,22 +39,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .dock-icon {
-  font-size: 35px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .dock-indicator {
+  position: absolute;
+  bottom: -4px;
   width: 4px;
   height: 4px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 50%;
-  margin-top: 6px;
   box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 

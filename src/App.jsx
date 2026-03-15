@@ -7,7 +7,7 @@ import MenuBar from './components/MenuBar/MenuBar'
 import MailApp from './components/MailApp/MailApp'
 import PaintApp from './components/PaintApp/PaintApp'
 import ProfileApp from './components/ProfileApp/ProfileApp'
-import BichonApp from './components/BichonApp/BichonApp'
+import BichonRunApp from './components/BichonRunApp/BichonRunApp'
 import StickyNoteApp from './components/StickyNoteApp/StickyNoteApp'
 import Dock from './components/Dock/Dock'
 import folderIcon from './assets/folder_icon.png'
@@ -16,7 +16,7 @@ import galleryIcon from './assets/gallery.png'
 import profileIcon from './assets/profile.png'
 import paintIcon from './assets/paint.png'
 import mailIcon from './assets/mail.png'
-import bichonIcon from './assets/bichon.png'
+import bichonIcon from './assets/bichon_icon.png'
 import './App.css'
 
 function App() {
@@ -51,7 +51,7 @@ function App() {
   const initialIcons = [
     { id: 'profile', icon: profileIcon, label: 'Profile' },
     { id: 'diary', icon: folderIcon, label: 'Diary' },
-    { id: 'bichon', icon: bichonIcon, label: 'Bichon' },
+    { id: 'run', icon: bichonIcon, label: 'Game' },
     { id: 'gallery', icon: galleryIcon, label: 'Gallery' },
     { id: 'paint', icon: paintIcon, label: 'Paint' },
     { id: 'music', icon: musicIcon, label: 'Music' },
@@ -125,7 +125,7 @@ function App() {
         switch(appId) {
           case 'profile': content = <ProfileApp />; break;
           case 'diary': content = <DiaryApp />; break;
-          case 'bichon': content = <BichonApp />; break;
+          case 'run': content = <BichonRunApp />; break;
           case 'paint': content = <PaintApp />; break;
           case 'music': content = <MusicApp />; break;
           case 'mail': content = <MailApp recipientEmail={recipientEmail} />; break;
