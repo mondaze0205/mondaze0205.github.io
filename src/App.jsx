@@ -122,12 +122,19 @@ function App() {
         if (minimizedWindows.includes(appId)) return null;
         const appData = initialIcons.find(icon => icon.id === appId);
         let content = null;
+        let initialWidth = 600;
+        let initialHeight = 400;
+
         switch(appId) {
           case 'profile': content = <ProfileApp />; break;
           case 'diary': content = <DiaryApp />; break;
           case 'run': content = <BichonRunApp />; break;
           case 'paint': content = <PaintApp />; break;
-          case 'music': content = <MusicApp />; break;
+          case 'music': 
+            content = <MusicApp />; 
+            initialWidth = 650;
+            initialHeight = 660;
+            break;
           case 'mail': content = <MailApp recipientEmail={recipientEmail} />; break;
           case 'gallery': content = (
             <div className="gallery-placeholder">
@@ -144,6 +151,8 @@ function App() {
             title={appData?.label || 'App'} 
             onClose={() => closeWindow(appId)} 
             onMinimize={() => minimizeWindow(appId)}
+            initialWidth={initialWidth}
+            initialHeight={initialHeight}
             isMobile={isMobile}
           >
             {content}
