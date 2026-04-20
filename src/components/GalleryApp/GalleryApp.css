@@ -1,0 +1,192 @@
+.gallery-container.mac-style {
+  display: flex;
+  height: 100%;
+  background: #ffffff;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Mac Vibrant Sidebar */
+.gallery-sidebar.mac-vibrant {
+  width: 210px;
+  background: rgba(246, 246, 246, 0.75);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 40px 10px 20px; /* 원래 패딩으로 복구 */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-shrink: 0;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.section-title {
+  padding-left: 15px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8a8a8e;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #3a3a3c;
+}
+
+.sidebar-menu li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.sidebar-menu li.active {
+  background: rgba(0, 0, 0, 0.1);
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+.sidebar-menu li .material-icons-round {
+  font-size: 18px;
+  color: #0071e3; /* Mac Blue */
+}
+
+.menu-text {
+  font-size: 13px;
+}
+
+/* Main Content Area */
+.gallery-main {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.mac-header {
+  padding: 40px 40px 20px; /* 상단 패딩을 40px로 늘려 사이드바와 맞춤 */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.mac-title {
+  font-size: 28px; /* 산세리프는 조금 더 작아도 가독성이 좋아요 */
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.item-count {
+  font-size: 13px;
+  color: #86868b;
+  font-weight: 500;
+}
+
+.view-toggle {
+  display: flex;
+  background: #f5f5f7;
+  padding: 2px;
+  border-radius: 8px;
+  gap: 2px;
+}
+
+.view-toggle .material-icons-round {
+  font-size: 18px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #86868b;
+}
+
+.view-toggle .material-icons-round.active {
+  background: #ffffff;
+  color: #1d1d1f;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Mac Photo Grid */
+.mac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  padding: 20px 40px 60px;
+}
+
+.mac-grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image-box {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f5f5f7;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.mac-grid-item:hover .image-box {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1d1d1f;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+}
+
+/* Custom Scrollbar for Mac feel */
+.gallery-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.gallery-main::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+}

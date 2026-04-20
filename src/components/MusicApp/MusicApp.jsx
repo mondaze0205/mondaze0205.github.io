@@ -3,6 +3,7 @@ import './MusicApp.css'
 
 function MusicApp() {
   const playlist = [
+    { id: 'OUkkaqSNduU', title: "You & Me", artist: "Disclosure" },
     { id: 'VOmIplFAGeg', title: "Cookie", artist: "NewJeans" },
     { id: 'ghrlZIMDzbM', title: "Hype Boy", artist: "NewJeans" },
     { id: 'jOTfBlKSQYY', title: "Super Shy", artist: "NewJeans" },

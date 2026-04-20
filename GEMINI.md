@@ -17,30 +17,33 @@
 ## 🏗 Key Architecture
 1. **Window System (`App.jsx`):**
    - `openWindows`, `minimizedWindows` 상태로 창 관리.
-   - 앱별 `initialWidth`, `initialHeight` 설정 가능 (MusicApp: 650x600).
+   - 앱별 `initialWidth`, `initialHeight` 설정 가능 (MusicApp: 650x600, DiaryApp: 900x650, GalleryApp: 1100x800).
 2. **Music Player Engine (Critical):**
-   - 라이브러리 대신 **YouTube IFrame API** 직접 호출하여 브라우저 자동 재생 정책 및 보안 정책 해결.
-   - **3-Layer Trick:**
-     1. `z-index: 1`: 실제 유튜브 영상 (Scale 1.3으로 검은 바 제거).
-     2. `z-index: 3`: 고해상도 썸네일(`maxresdefault.jpg`) 이미지 덮개.
-     3. `z-index: 5`: 투명 클릭 차단 레이어 (사용자의 직접적인 유튜브 인터랙션 방지).
-   - `setInterval`을 이용한 커스텀 재생 바(Progress Bar) 연동.
+   - YouTube IFrame API 직접 호출. **Disclosure - You & Me** 트랙이 플레이리스트 최상단에 추가됨.
+   - **3-Layer Trick** (유튜브 영상 / 썸네일 / 클릭 차단 레이어) 유지.
 
 ## ✅ Current Status (Implemented Apps)
 - [x] **ProfileApp:** 개인 프로필 정보 표시.
-- [x] **DiaryApp:** 블로그/일기 목록 및 내용 표시 (마크다운 연동 준비 중).
+- [x] **DiaryApp (Updated 26-04-20):** 
+  - 사이드바 탐색기 + 본문 레이아웃으로 개편.
+  - 마크다운 Frontmatter(title, date) 파싱 및 최신순 정렬 기능 추가.
+- [x] **GalleryApp (New 26-04-20):** 
+  - Mac "Photos" 앱 스타일의 반투명 사이드바 및 정갈한 그리드 레이아웃.
+  - 시스템 폰트(San-serif) 기반의 깔끔한 UI 및 상단 헤더 정렬(40px) 최적화.
 - [x] **BichonRunApp:** 간단한 비숑 달리기 게임.
 - [x] **PaintApp:** 캔버스 기반 그림판.
-- [x] **MusicApp:** 유튜브 API 기반 "눈속임" 플레이어 (소리 재생 및 UI 동기화 완벽 구현).
+- [x] **MusicApp:** 플레이리스트 및 재생 바 연동 완료.
 - [x] **MailApp:** 이메일 문의 폼.
 - [x] **StickyNoteApp:** 데스크톱 포스트잇 기능.
 
 ## 📝 Roadmap & TODO
-- [ ] `DiaryApp` 내 마크다운 파일(src/posts/1.md 등) 실제 렌더링 연동.
-- [ ] `GalleryApp` 앨범 레이아웃 및 이미지 슬라이더 구현.
-- [ ] 모바일 환경(iPhone Mode)에서 MusicApp의 레이아웃 최적화.
+- [x] `DiaryApp` 내 마크다운 파일 실제 렌더링 및 메타데이터 연동 완료.
+- [x] `GalleryApp` 앨범 레이아웃 구현 완료.
+- [ ] 모바일 환경(iPhone Mode)에서 각 앱들의 레이아웃 최적화 (특히 MusicApp).
 - [ ] MenuBar의 위젯(시계 등) 실시간 데이터 연동.
+- [ ] GalleryApp 내 이미지 슬라이더 또는 상세 보기 기능 보완.
 
 ## 📏 Coding Conventions
 - 유튜브 관련 작업 시 표준 `watch?v=` URL 사용 필수.
 - 새로운 앱 추가 시 `App.jsx`의 `switch-case` 문에 `initialWidth/Height` 명시 권장.
+- Mac 스타일 앱 구현 시 `backdrop-filter: blur()`와 산세리프 시스템 폰트 사용 선호.

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import DesktopIcon from './components/DesktopIcon/DesktopIcon'
 import Window from './components/Window/Window'
 import DiaryApp from './components/DiaryApp/DiaryApp'
+import GalleryApp from './components/GalleryApp/GalleryApp'
 import MusicApp from './components/MusicApp/MusicApp'
 import MenuBar from './components/MenuBar/MenuBar'
 import MailApp from './components/MailApp/MailApp'
@@ -127,7 +128,11 @@ function App() {
 
         switch(appId) {
           case 'profile': content = <ProfileApp />; break;
-          case 'diary': content = <DiaryApp />; break;
+          case 'diary': 
+            content = <DiaryApp />; 
+            initialWidth = 900;
+            initialHeight = 650;
+            break;
           case 'run': content = <BichonRunApp />; break;
           case 'paint': content = <PaintApp />; break;
           case 'music': 
@@ -136,12 +141,11 @@ function App() {
             initialHeight = 660;
             break;
           case 'mail': content = <MailApp recipientEmail={recipientEmail} />; break;
-          case 'gallery': content = (
-            <div className="gallery-placeholder">
-              <h2>사진첩</h2>
-              <p>준비 중입니다...</p>
-            </div>
-          ); break;
+          case 'gallery': 
+            content = <GalleryApp onClose={() => closeWindow(appId)} onMinimize={() => minimizeWindow(appId)} />;
+            initialWidth = 1100;
+            initialHeight = 800;
+            break;
           default: content = null;
         }
 
