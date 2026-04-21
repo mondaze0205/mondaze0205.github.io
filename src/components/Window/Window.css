@@ -1,6 +1,7 @@
 .mac-window {
   position: absolute;
-  background-color: #ECECEC;
+  /* Changed to transparent to allow Glassmorphism apps to show desktop */
+  background-color: transparent; 
   border: 1px solid #A5A5A5;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
   display: flex;
@@ -116,7 +117,8 @@
   flex: 1;
   padding: 0; /* Reset for app-specific padding */
   overflow: auto;
-  background-color: #FFF;
+  /* Changed to transparent to support Glassmorphism in apps */
+  background-color: transparent; 
 }
 
 .resizer {

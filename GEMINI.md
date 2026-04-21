@@ -24,24 +24,26 @@
 
 ## ✅ Current Status (Implemented Apps)
 - [x] **ProfileApp:** 개인 프로필 정보 표시.
-- [x] **DiaryApp (Updated 26-04-20):** 
-  - 사이드바 탐색기 + 본문 레이아웃으로 개편.
-  - 마크다운 Frontmatter(title, date) 파싱 및 최신순 정렬 기능 추가.
-- [x] **GalleryApp (New 26-04-20):** 
-  - Mac "Photos" 앱 스타일의 반투명 사이드바 및 정갈한 그리드 레이아웃.
-  - 시스템 폰트(San-serif) 기반의 깔끔한 UI 및 상단 헤더 정렬(40px) 최적화.
+- [x] **DiaryApp (Updated 2026-04-21):** 
+  - 사이드바 탐색기 + 본문 레이아웃으로 개편 완료.
+  - 마크다운 Frontmatter(title, date) 파싱 및 최신순 정렬 기능 구현.
+- [x] **GalleryApp (Updated 2026-04-21):** 
+  - Mac "Photos" 앱 스타일의 반투명 사이드바 및 그리드 레이아웃.
+  - `src/assets/gallery/` 내 다수의 이미지 에셋(pic 1~9) 연동 완료.
+  - 시스템 폰트(San-serif) 및 상단 헤더(40px) 최적화.
 - [x] **BichonRunApp:** 간단한 비숑 달리기 게임.
-- [x] **PaintApp:** 캔버스 기반 그림판.
-- [x] **MusicApp:** 플레이리스트 및 재생 바 연동 완료.
-- [x] **MailApp:** 이메일 문의 폼.
-- [x] **StickyNoteApp:** 데스크톱 포스트잇 기능.
+- [x] **PaintApp:** 캔버스 기반 그림판 (색상 선택 및 브러시 조절).
+- [x] **MusicApp:** YouTube IFrame API 기반 플레이리스트 및 재생 제어.
+- [x] **MailApp:** 이메일 문의 폼 (필드 검증 및 전송 시뮬레이션).
+- [x] **StickyNoteApp:** 데스크톱 포스트잇 (드래그 및 개별 메모 관리).
 
 ## 📝 Roadmap & TODO
-- [x] `DiaryApp` 내 마크다운 파일 실제 렌더링 및 메타데이터 연동 완료.
-- [x] `GalleryApp` 앨범 레이아웃 구현 완료.
-- [ ] 모바일 환경(iPhone Mode)에서 각 앱들의 레이아웃 최적화 (특히 MusicApp).
-- [ ] MenuBar의 위젯(시계 등) 실시간 데이터 연동.
-- [ ] GalleryApp 내 이미지 슬라이더 또는 상세 보기 기능 보완.
+- [x] `DiaryApp` 마크다운 렌더링 및 메타데이터 동적 로딩.
+- [x] `GalleryApp` 앨범 레이아웃 및 이미지 그리드 구현.
+- [ ] **Mobile Optimization:** iPhone 모드 등 모바일 브라우저 대응 레이아웃 최적화.
+- [ ] **System Widget:** MenuBar의 시계 및 배터리 상태 등 실시간 데이터 연동.
+- [ ] **Gallery Detail:** GalleryApp 내 이미지 클릭 시 상세 보기(라이트박스) 기능 추가.
+- [ ] **Window Snap:** 창을 화면 가장자리로 드래그 시 스냅되는 기능 검토.
 
 ## 📏 Coding Conventions
 - 유튜브 관련 작업 시 표준 `watch?v=` URL 사용 필수.

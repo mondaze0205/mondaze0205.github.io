@@ -45,10 +45,26 @@ function Window({ title, onClose, onMinimize, children, initialWidth = 600, init
 
   const handleDragMove = (e) => {
     if (!isDragging.current) return
-    setPosition({
-      x: e.clientX - dragStartPos.current.x,
-      y: e.clientY - dragStartPos.current.y
-    })
+    
+    let newX = e.clientX - dragStartPos.current.x
+    let newY = e.clientY - dragStartPos.current.y
+
+    // --- Strict Viewport Constraints ---
+    // 1. Horizontal: 0 ~ (Window Width - App Width)
+    const maxX = window.innerWidth - size.width
+    if (newX < 0) newX = 0
+    if (newX > maxX) newX = maxX
+
+    // 2. Vertical: 24 (MenuBar) ~ (Window Height - App Height)
+    const maxY = window.innerHeight - size.height
+    if (newY < 24) newY = 24
+    if (newY > maxY) newY = maxY
+
+    // If window is larger than screen, prioritize top-left visibility
+    if (newY < 24) newY = 24
+    if (newX < 0) newX = 0
+
+    setPosition({ x: newX, y: newY })
   }
 
   const stopDragging = () => {

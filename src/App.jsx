@@ -134,7 +134,11 @@ function App() {
             initialHeight = 650;
             break;
           case 'run': content = <BichonRunApp />; break;
-          case 'paint': content = <PaintApp />; break;
+          case 'paint': 
+            content = <PaintApp />; 
+            initialWidth = 1000;
+            initialHeight = 750;
+            break;
           case 'music': 
             content = <MusicApp />; 
             initialWidth = 650;
